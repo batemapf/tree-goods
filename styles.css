@@ -30,6 +30,15 @@ header {
     margin-bottom: 40px;
 }
 
+.logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 h1 {
     font-size: 3rem;
     font-weight: 400;

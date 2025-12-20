@@ -94,3 +94,48 @@ resource "aws_s3_object" "script" {
   content_type = "application/javascript"
   etag         = filemd5("${path.module}/script.js")
 }
+
+# Upload logo.png
+resource "aws_s3_object" "logo" {
+  bucket       = aws_s3_bucket.website.id
+  key          = "logo.png"
+  source       = "${path.module}/logo.png"
+  content_type = "image/png"
+  etag         = filemd5("${path.module}/logo.png")
+}
+
+# Upload favicon.ico
+resource "aws_s3_object" "favicon_ico" {
+  bucket       = aws_s3_bucket.website.id
+  key          = "favicon.ico"
+  source       = "${path.module}/favicon.ico"
+  content_type = "image/x-icon"
+  etag         = filemd5("${path.module}/favicon.ico")
+}
+
+# Upload favicon-32x32.png
+resource "aws_s3_object" "favicon_32" {
+  bucket       = aws_s3_bucket.website.id
+  key          = "favicon-32x32.png"
+  source       = "${path.module}/favicon-32x32.png"
+  content_type = "image/png"
+  etag         = filemd5("${path.module}/favicon-32x32.png")
+}
+
+# Upload favicon-16x16.png
+resource "aws_s3_object" "favicon_16" {
+  bucket       = aws_s3_bucket.website.id
+  key          = "favicon-16x16.png"
+  source       = "${path.module}/favicon-16x16.png"
+  content_type = "image/png"
+  etag         = filemd5("${path.module}/favicon-16x16.png")
+}
+
+# Upload apple-touch-icon.png
+resource "aws_s3_object" "apple_touch_icon" {
+  bucket       = aws_s3_bucket.website.id
+  key          = "apple-touch-icon.png"
+  source       = "${path.module}/apple-touch-icon.png"
+  content_type = "image/png"
+  etag         = filemd5("${path.module}/apple-touch-icon.png")
+}

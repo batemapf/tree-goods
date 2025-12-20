@@ -86,6 +86,12 @@ Terraform will automatically detect the changes and update the S3 bucket.
 ├── index.html              # Main HTML file
 ├── styles.css              # CSS stylesheet
 ├── script.js               # JavaScript functionality
+├── logo.png                # Main logo image (displayed in header)
+├── favicon.ico             # Favicon for browsers
+├── favicon-32x32.png       # 32x32 favicon
+├── favicon-16x16.png       # 16x16 favicon
+├── apple-touch-icon.png    # Apple touch icon (180x180)
+├── favicon.png             # Source favicon image (1024x1024)
 ├── main.tf                 # Main Terraform configuration
 ├── variables.tf            # Terraform variables
 ├── outputs.tf              # Terraform outputs
