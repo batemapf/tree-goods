@@ -1,15 +1,12 @@
-// Bateman Tree Goods - Vanilla JavaScript
+// Ordinary Tree Goods - Vanilla JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Contact button functionality
-    const contactBtn = document.getElementById('contactBtn');
-    
-    if (contactBtn) {
-        contactBtn.addEventListener('click', function() {
-            alert('Thank you for your interest! Please contact us at info@batemantreegoods.com');
-        });
+    // Set current year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
     }
 
     // Log page load
-    console.log('Bateman Tree Goods website loaded successfully');
+    console.log('Ordinary Tree Goods website loaded successfully');
 });

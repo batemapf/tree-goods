@@ -1,44 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bateman Tree Goods - Locally made furniture and wood craft items on Capitol Hill, Washington DC">
-    <title>Bateman Tree Goods</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Ordinary Tree Goods - Handcrafted furniture and wood goods from Washington, D.C." />
+  <title>Ordinary Tree Goods</title>
+
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <header>
-        <h1>Bateman Tree Goods</h1>
-        <p class="tagline">Locally Made Furniture & Wood Craft Items</p>
-    </header>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="hero" role="banner">
+    <div class="wrap center">
+      <img class="logo" src="assets/logo-primary-black.png" alt="Ordinary Tree Goods - Handcrafted furniture and wood goods" />
+    </div>
+  </header>
 
-    <main>
-        <section class="intro">
-            <p>Welcome to Bateman Tree Goods, your source for handcrafted wooden furniture and artisan wood craft items on Capitol Hill in Washington, DC.</p>
-        </section>
+  <main id="main-content" class="wrap">
+    <section id="work" class="section" aria-label="Featured work">
+      <h2 class="visually-hidden">Featured Work</h2>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div class="thumb" role="img" aria-label="Product image placeholder"></div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="thumb" role="img" aria-label="Product image placeholder"></div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="thumb" role="img" aria-label="Product image placeholder"></div>
+        </article>
+      </div>
+    </section>
 
-        <section class="about">
-            <h2>About Us</h2>
-            <p>We specialize in creating beautiful, durable furniture and wood crafts from locally sourced materials. Each piece is carefully crafted with attention to detail and built to last.</p>
-        </section>
+    <section id="contact" class="section" aria-label="Contact information">
+      <h2 class="visually-hidden">Contact</h2>
+      <p class="contact-line"><a href="mailto:work@ordinarytreegoods.com">work@ordinarytreegoods.com</a> | Washington, D.C.</p>
+    </section>
+  </main>
 
-        <section class="location">
-            <h2>Location</h2>
-            <p>Capitol Hill, Washington DC</p>
-        </section>
+  <footer class="footer" role="contentinfo">
+    <span>© <span id="year"></span> Ordinary Tree Goods</span>
+  </footer>
 
-        <section class="contact">
-            <h2>Contact</h2>
-            <p>For inquiries about our products, please reach out to us.</p>
-            <button id="contactBtn" class="contact-button">Get in Touch</button>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Bateman Tree Goods. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
