@@ -1,4 +1,4 @@
-# Terraform configuration for Bateman Tree Goods static website hosting on S3
+# Terraform configuration for Ordinary Tree Goods static website hosting on S3
 
 terraform {
   required_version = ">= 1.0"
@@ -20,7 +20,7 @@ resource "aws_s3_bucket" "website" {
   bucket = var.bucket_name
 
   tags = {
-    Name        = "Bateman Tree Goods Website"
+    Name        = "Ordinary Tree Goods Website"
     Environment = var.environment
   }
 }
@@ -93,4 +93,24 @@ resource "aws_s3_object" "script" {
   source       = "${path.module}/script.js"
   content_type = "application/javascript"
   etag         = filemd5("${path.module}/script.js")
+}
+
+# Upload all assets
+resource "aws_s3_object" "assets" {
+  for_each = fileset("${path.module}/assets", "**/*")
+
+  bucket = aws_s3_bucket.website.id
+  key    = "assets/${each.value}"
+  source = "${path.module}/assets/${each.value}"
+  etag   = filemd5("${path.module}/assets/${each.value}")
+
+  content_type = lookup({
+    "png"  = "image/png"
+    "ico"  = "image/x-icon"
+    "jpg"  = "image/jpeg"
+    "jpeg" = "image/jpeg"
+    "svg"  = "image/svg+xml"
+    "gif"  = "image/gif"
+    "webp" = "image/webp"
+  }, split(".", each.value)[length(split(".", each.value)) - 1], "application/octet-stream")
 }
