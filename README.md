@@ -32,14 +32,40 @@ Then navigate to `http://localhost:8000` in your browser.
 
 ## Deployment
 
-The site is deployed to AWS S3 using Terraform.
+The site can be deployed to AWS S3 using either Terraform (manual) or GitHub Actions (automated).
 
-### Prerequisites
+### Option 1: Automated Deployment with GitHub Actions
+
+The repository includes a GitHub Action that automatically deploys the site to S3 on every push to the `main` branch.
+
+#### Setup GitHub Secrets
+
+To enable automated deployments, add the following secrets to your GitHub repository (Settings → Secrets and variables → Actions):
+
+- `AWS_ACCESS_KEY_ID` - Your AWS access key ID
+- `AWS_SECRET_ACCESS_KEY` - Your AWS secret access key
+- `AWS_REGION` - AWS region (e.g., `us-east-1`)
+- `S3_BUCKET_NAME` - Name of your S3 bucket (e.g., `bateman-tree-goods`)
+- `CLOUDFRONT_DISTRIBUTION_ID` - (Optional) CloudFront distribution ID for cache invalidation
+
+#### How It Works
+
+Once configured, the workflow will:
+1. Trigger on any push to the `main` branch
+2. Sync all website files to your S3 bucket
+3. Automatically clean up deleted files from S3
+4. Invalidate CloudFront cache (if configured)
+
+To deploy, simply merge your changes to the `main` branch and the GitHub Action will handle the rest.
+
+### Option 2: Manual Deployment with Terraform
+
+#### Prerequisites
 
 - AWS CLI configured with appropriate credentials
 - Terraform >= 1.0 installed
 
-### Deployment Steps
+#### Deployment Steps
 
 1. Copy the example variables file:
    ```bash
@@ -69,7 +95,7 @@ The site is deployed to AWS S3 using Terraform.
 
 6. After successful deployment, Terraform will output the website URL.
 
-### Updating the Site
+#### Updating the Site
 
 After making changes to `index.html`, `styles.css`, or `script.js`, run:
 
